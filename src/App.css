@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+.card {
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(22, 22, 22, 0.1);
+    width: 80%;
+    /* max-width: 500px; */
+    margin: 0 auto 1rem;
+    text-align: center;
+    padding: 1rem 2rem 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+    background-color: white;
+    /* border: 1px solid #e5e5e5; */
+    border-radius: 8px;
+    /* box-shadow: 0 1px 8px rgba(22, 22, 22, 0.1); */
+    /* width: 80%; */
+    /* max-width: 500px; */
+    margin: 0 auto 1rem;
+    text-align: center;
+    padding: 1rem 2rem 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper .search {
+    outline: auto;
+    padding: 6px;
+    margin-bottom: 2em;
+    width: 50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.wrapper input {
+    outline: auto;
+    width: 60px;
+}
+.button {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4caf50;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button1:hover {
+    background-color: #4caf50;
+    color: white;
+}
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008cba;
+}
+
+.button2:hover {
+    background-color: #008cba;
+    color: white;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    /* width: 80%; */
+    /* padding: 1em; */
+}
+
+.filter select {
+    padding: 5px;
+    outline: #008cba;
+}
+
+.filter input {
+    padding: 5px;
+}
+
+.range label {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 16px 0 0;
+}
+.range input {
+    margin: 0 16px 0 0;
+}
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+}
+
+table tr {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+}
+table tr:hover {
+    background-color: rgb(235, 225, 225);
+    cursor: pointer;
+    /* padding: 0.5em; */
+}
+
+table th,
+table td {
+    padding: 0.625em;
+    text-align: center;
+}
+
+table th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 460px) {
+    .card {
+        width: 90%;
+    }
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
 }

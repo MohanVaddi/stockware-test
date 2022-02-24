@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Table from './components/Table';
+import Warehouse from './components/Warehouse';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+interface AppProps {}
+
+const App: React.FC<AppProps> = ({}) => (
+    <Routes>
+        <Route path='/' element={<Table />} />
+        <Route path=':warehouseId' element={<Warehouse />} />
+    </Routes>
+);
+
+
 
 export default App;
