@@ -1,8 +1,6 @@
 import {
     createSlice,
-    current,
-    createReducer,
-    PayloadAction,
+  
 } from '@reduxjs/toolkit';
 import data from './../warehouse.json';
 
@@ -16,7 +14,7 @@ const warehouseSlice = createSlice({
     reducers: {
         modifyData(state, action) {
             const { code, newData } = action.payload;
-            const toBeUpdate_idx = state.findIndex((item) => item.code == code);
+            const toBeUpdate_idx = state.findIndex((item) => item.code === code);
             state[toBeUpdate_idx] = { ...state[toBeUpdate_idx], ...newData };
         },
     },

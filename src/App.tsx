@@ -6,7 +6,7 @@ import Warehouse from './components/Warehouse';
 
 interface AppProps {}
 
-const App: React.FC<AppProps> = ({}) => (
+const App: React.FC<AppProps> = () => (
     <Routes>
         <Route path='/' element={<Table />} />
         <Route path=':warehouseId' element={<Warehouse />} />

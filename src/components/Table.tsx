@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react';
-import { useAppDispatch, useAppSelector } from './../store/hooks';
+import React, { Fragment, useRef, useState } from 'react';
+import { useAppSelector } from './../store/hooks';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
@@ -69,6 +69,8 @@ const Table = () => {
                         item.space_available >= min &&
                         item.space_available <= max
                     );
+                } else {
+                    return item;
                 }
             })
         );

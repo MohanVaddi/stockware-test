@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './../components/Warehouse.module.css';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
-import warehouse from '../store/warehouse';
 import { useNavigate } from 'react-router-dom';
 import { warehouseActions } from '../store/warehouse';
 const Warehouse = () => {
@@ -10,7 +9,7 @@ const Warehouse = () => {
     const dispatch = useAppDispatch();
     const { warehouseId } = useParams();
     const data = useAppSelector((state) =>
-        state.warehouse.filter((item) => warehouseId == item.code)
+        state.warehouse.filter((item) => warehouseId === item.code)
     );
     let properties: string[] = [];
     for (const key of Object.keys(data[0])) {
